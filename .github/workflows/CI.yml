@@ -10,20 +10,13 @@ jobs:
   build-and-test:
 
     runs-on: macos-latest
-    strategy:
-      matrix:
-        destination: ['platform=iOS Simulator,OS=12.0,name=iPhone 7']
-        xcode: ['/Applications/Xcode_12.5.app/Contents/Developer']
 
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Bundle Install
-        run: bundle install
-        env:
-          BUNDLE_GITHUB__COM: x-access-token:${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.5.app
+
     - name: Build and test
-      run: bundle exec fastlane scan --destination "${destination}" --scheme "FitNess"
-      env:
-        destination: ${{ matrix.destination }}
-        DEVELOPER_DIR: ${{ matrix.xcode }}
+      run: xcodebuild clean build test -workspace FitNess.xcworkspace -scheme "FitNess" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 7" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+
