@@ -15,5 +15,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Build and test
-      run: xcodebuild clean build test -workspace FitNess.xcworkspace -scheme "FitNess" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 7" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -workspace FitNess.xcworkspace -scheme "FitNess" -sdk iphonesimulator -destination "platform:iOS Simulator, id:A9C54342-752A-4EA1-AD76-683DE61A8D67, OS:12.0, name:iPhone 8" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 

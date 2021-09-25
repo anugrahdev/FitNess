@@ -127,7 +127,6 @@
 				A17C742A2EA3C6DE3351C3FF /* Pods-FitNessTests.debug.xcconfig */,
 				DEB050CF87AB13B854837305 /* Pods-FitNessTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -549,6 +548,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FitNess/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.FitNess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -566,6 +566,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FitNess/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.FitNess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
