@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Build and test
-      run: xcodebuild clean build test -workspace FitNess.xcworkspace -scheme "FitNess" -sdk iphonesimulator -destination "platform:iOS Simulator, id:A9C54342-752A-4EA1-AD76-683DE61A8D67, OS:12.0, name:iPhone 8" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
-
+    - name: Force XCode 11.3
+        run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+    - name: Testing iOS app
+        run: exec ./.github/workflows/test_app.sh
