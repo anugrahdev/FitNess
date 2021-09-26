@@ -23,4 +23,4 @@ jobs:
         pod install --repo-update
       shell: bash
     - name: Build and Test
-      run:  xcodebuild test -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIORED=NO  
+      run:  xcodebuild test -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.5' | xcpretty && exit ${PIPESTATUS[0]} ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIORED=NO  
