@@ -18,7 +18,5 @@ jobs:
       run: |
         pod install --repo-update
       shell: bash
-    - name: Build
-      run: xcodebuild -workspace FitNess.xcworkspace -scheme FitNess -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12'
-    - name: Test
-      run: xcodebuild -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' test
+    - name: Build and Test
+      run:  xcodebuild -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIORED=NO  
