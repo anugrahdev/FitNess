@@ -14,9 +14,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+    - name: List available Xcode versions
+      run: ls /Applications | grep Xcode
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.2.app && /usr/bin/xcodebuild -version
     - name: Install Dependencies
       run: |
         pod install --repo-update
       shell: bash
     - name: Build and Test
-      run:  xcodebuild -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIORED=NO  
+      run:  xcodebuild test -workspace FitNess.xcworkspace -scheme FitNess -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIORED=NO  
