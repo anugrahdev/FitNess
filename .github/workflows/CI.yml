@@ -16,7 +16,6 @@ jobs:
       uses: actions/checkout@v1
     - name: Install Dependencies
       run: |
-        cd Example
         pod install --repo-update
       shell: bash
     - name: Testing iOS app
